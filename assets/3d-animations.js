@@ -157,7 +157,7 @@
 
   // 2. 3D INTERACTIVE TILT FOR CARDS & PORTFOLIO
   function init3DCardTilt() {
-    const selector = '.deck-card, .service-row, .marquee-slide-card, #work article, .glow-badge-3d, .about-glass-badge, .about-value-node, .about-connect-btn';
+    const selector = '.deck-card, .service-row, .marquee-slide-card, #work article, .glow-badge-3d, .about-glass-badge, .about-value-node, .about-connect-btn, .about-showcase-card-3d';
     const cards = document.querySelectorAll(selector);
 
     cards.forEach(card => {
