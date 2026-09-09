@@ -420,8 +420,18 @@
 
   var featuredWorksData = [
     {
+      id: "web",
+      tag: "01 // WEB ARCHITECTURE & UI/UX",
+      title: "MODERN WEB ARCHITECTURE & UI/UX",
+      tagline: "Ideas | Design | Develop | Grow • Scalable Websites | Intuitive Experiences",
+      desc: "Clean architecture, creative UI/UX, fully responsive design, and high-performance modern web platforms & web apps engineered from vision to digital reality.",
+      img: "/assets/work/web-architecture.png",
+      deliverables: ["Clean Architecture", "Creative UI/UX", "Responsive Design", "High Performance", "Secure & Scalable"],
+      badgeColor: "text-cyan-400 border-cyan-500/40 bg-cyan-500/10"
+    },
+    {
       id: "branding",
-      tag: "01 // BRAND IDENTITY",
+      tag: "02 // BRAND IDENTITY",
       title: "BRAND IDENTITY & STRATEGY",
       tagline: "Build | Design | Grow • Ideas That Make Brands Shine",
       desc: "Complete corporate identity systems including luxury logo mark, stationery suites, color hierarchy, and brand guidelines for market leadership.",
@@ -431,7 +441,7 @@
     },
     {
       id: "video",
-      tag: "02 // VIDEO EDITING",
+      tag: "03 // VIDEO EDITING",
       title: "CINEMATIC VIDEO EDITING & REELS",
       tagline: "Turn Your Ideas into Impact • Story . Style . Impact",
       desc: "High-retention social media reels, commercial brand promos, corporate showcase films, and dynamic motion graphics engineered for maximum engagement.",
@@ -441,7 +451,7 @@
     },
     {
       id: "marketing",
-      tag: "03 // DIGITAL MARKETING",
+      tag: "04 // DIGITAL MARKETING",
       title: "SOCIALBOOST DIGITAL MARKETING",
       tagline: "Grow Your Brand • Go Beyond • Strategic Growth",
       desc: "Data-driven performance marketing combining targeted Meta ads, conversion funnels, search engine optimization, and creative social campaigns for real results.",
@@ -451,22 +461,12 @@
     },
     {
       id: "ai",
-      tag: "04 // AI AGENTS",
+      tag: "05 // AI AGENTS",
       title: "INTELLIGENT AI AGENTS & AUTOMATION",
       tagline: "Automate | Assist | Accelerate • Intelligence Beyond Limits",
       desc: "Custom 24/7 autonomous AI agents designed to qualify leads, handle instant customer support, eliminate manual tasks, and scale operations smoothly.",
       img: "/assets/work/ai-agents.png",
       deliverables: ["24/7 Customer Support", "AI Sales Agents", "Lead Qualification", "Workflow Automations"],
-      badgeColor: "text-cyan-400 border-cyan-500/40 bg-cyan-500/10"
-    },
-    {
-      id: "web",
-      tag: "05 // WEBSITE DEV",
-      title: "MODERN WEB ARCHITECTURE & UI/UX",
-      tagline: "Living Better • Modern Websites for Bigger Brands",
-      desc: "Bespoke high-converting websites, luxury real estate digital experiences, portfolio platforms, and animated web apps with 100% responsive performance.",
-      img: "/assets/portfolio-pages/page-37.png",
-      deliverables: ["Modern UI/UX", "Mobile First", "3D Web Animations", "Fast & Secure"],
       badgeColor: "text-emerald-400 border-emerald-500/40 bg-emerald-500/10"
     }
   ];
@@ -474,7 +474,7 @@
   function enhanceSelectedWork() {
     var workSection = document.getElementById("work");
     if (!workSection) return;
-    if (workSection.getAttribute("data-showcase-enhanced") === "true") return;
+    if (workSection.getAttribute("data-showcase-enhanced") === "v2") return;
 
     var container = workSection.querySelector(".overflow-x-auto > .flex");
     if (!container) return;
@@ -543,7 +543,7 @@
     });
 
     container.innerHTML = html;
-    workSection.setAttribute("data-showcase-enhanced", "true");
+    workSection.setAttribute("data-showcase-enhanced", "v2");
 
     if (window.reInit3DAnimations) {
       window.reInit3DAnimations();
