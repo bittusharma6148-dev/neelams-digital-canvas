@@ -476,9 +476,88 @@
     }
   }
 
+  function renderPortfolioMarquee() {
+    var deckSec = document.getElementById("portfolio-deck");
+    if (!deckSec) return;
+    if (document.getElementById("portfolio-slides-marquee-section")) return;
+
+    var marqueeSection = document.createElement("div");
+    marqueeSection.id = "portfolio-slides-marquee-section";
+    marqueeSection.className = "mb-16 overflow-hidden border-y border-border/60 bg-[#070a0f]/80 py-8 backdrop-blur-md";
+
+    var headerHtml = '<div class="mx-auto max-w-[1600px] mb-5 px-5 md:px-0 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">' +
+      '<div class="flex items-center gap-3">' +
+        '<span class="flex h-2.5 w-2.5 relative">' +
+          '<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>' +
+          '<span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-primary"></span>' +
+        '</span>' +
+        '<span class="font-mono text-xs text-primary font-semibold tracking-wider uppercase">INTERACTIVE PORTFOLIO GLIDE MARQUEE</span>' +
+      '</div>' +
+      '<span class="font-mono text-[10px] text-muted-foreground uppercase tracking-widest hidden sm:inline-block">HOVER ANY CARD TO PAUSE • CLICK TO EXPAND FULL SLIDE</span>' +
+    '</div>';
+
+    // Build cards for Marquee Track 1 (Left Glide)
+    var cardsHtml1 = '';
+    slides.forEach(function(slide, idx) {
+      var padPage = String(slide.p).padStart(2, "0");
+      cardsHtml1 += '<div class="marquee-slide-card tilt-3d" onclick="openSlideModal(' + idx + ')" title="' + slide.title + '">' +
+        '<img src="' + slide.img + '" alt="' + slide.title + '" loading="lazy" />' +
+        '<div class="marquee-slide-overlay">' +
+          '<div class="flex items-center justify-between">' +
+            '<span class="font-mono text-[9px] uppercase px-2 py-0.5 bg-black/80 text-primary border border-primary/30">P. ' + padPage + ' / 41</span>' +
+            '<span class="font-mono text-[9px] uppercase px-2 py-0.5 bg-white/10 text-white/90 backdrop-blur-sm">' + slide.cat + '</span>' +
+          '</div>' +
+          '<div>' +
+            '<h4 class="font-display text-sm font-semibold text-white truncate">' + slide.title + '</h4>' +
+            '<p class="font-mono text-[9px] text-primary flex items-center gap-1 mt-1"><span>VIEW SLIDE</span> ↗</p>' +
+          '</div>' +
+        '</div>' +
+      '</div>';
+    });
+
+    // Build cards for Marquee Track 2 (Right Glide - reversed order)
+    var reversedSlides = slides.slice().reverse();
+    var cardsHtml2 = '';
+    reversedSlides.forEach(function(slide, rIdx) {
+      var origIdx = slides.length - 1 - rIdx;
+      var padPage = String(slide.p).padStart(2, "0");
+      cardsHtml2 += '<div class="marquee-slide-card tilt-3d" onclick="openSlideModal(' + origIdx + ')" title="' + slide.title + '">' +
+        '<img src="' + slide.img + '" alt="' + slide.title + '" loading="lazy" />' +
+        '<div class="marquee-slide-overlay">' +
+          '<div class="flex items-center justify-between">' +
+            '<span class="font-mono text-[9px] uppercase px-2 py-0.5 bg-black/80 text-primary border border-primary/30">P. ' + padPage + ' / 41</span>' +
+            '<span class="font-mono text-[9px] uppercase px-2 py-0.5 bg-white/10 text-white/90 backdrop-blur-sm">' + slide.cat + '</span>' +
+          '</div>' +
+          '<div>' +
+            '<h4 class="font-display text-sm font-semibold text-white truncate">' + slide.title + '</h4>' +
+            '<p class="font-mono text-[9px] text-cyan-400 flex items-center gap-1 mt-1"><span>VIEW SLIDE</span> ↗</p>' +
+          '</div>' +
+        '</div>' +
+      '</div>';
+    });
+
+    var track1Html = '<div class="marquee-container mb-4"><div class="marquee-track">' + cardsHtml1 + cardsHtml1 + '</div></div>';
+    var track2Html = '<div class="marquee-container"><div class="marquee-track marquee-track-reverse">' + cardsHtml2 + cardsHtml2 + '</div></div>';
+
+    marqueeSection.innerHTML = headerHtml + track1Html + track2Html;
+
+    var container = deckSec.querySelector(".mx-auto.max-w-\\[1600px\\]") || deckSec;
+    var filterTabs = document.getElementById("deck-filter-tabs");
+    if (filterTabs) {
+      container.insertBefore(marqueeSection, filterTabs);
+    } else {
+      container.insertBefore(marqueeSection, container.firstChild);
+    }
+
+    if (window.reInit3DAnimations) {
+      window.reInit3DAnimations();
+    }
+  }
+
   function initAll() {
     createModal();
     renderDeckSection();
+    renderPortfolioMarquee();
     enhanceSelectedWork();
     enhanceNav();
     enhanceAbout();

@@ -1,56 +1,260 @@
-/* Custom Styles for Neelam's Digital Canvas */
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,600;0,800;1,400;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
+﻿/* ==========================================================================
+   NEELAM'S DIGITAL CANVAS — PROFESSIONAL TYPOGRAPHY & 3D ANIMATION ENGINE
+   ========================================================================== */
 
+/* 1. PROFESSIONAL MODERN TYPOGRAPHY IMPORTS */
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600&family=Space+Grotesk:wght@500;600;700&family=Syne:wght@600;700;800;900&display=swap');
+
+:root {
+  --font-display: 'Syne', 'Plus Jakarta Sans', -apple-system, sans-serif;
+  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-tech: 'Space Grotesk', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  /* Modern 3D & Accent Variables */
+  --primary-glow: rgba(99, 102, 241, 0.4);
+  --accent-cyan: #06b6d4;
+  --accent-purple: #8b5cf6;
+  --accent-emerald: #10b981;
+}
+
+/* 2. UNIVERSAL TYPOGRAPHY OVERRIDES */
 html {
   scroll-behavior: smooth;
   color-scheme: dark;
 }
 
-body {
-  font-family: 'Plus Jakarta Sans', sans-serif;
-  background-color: #020617;
+body, html {
+  font-family: var(--font-sans) !important;
+  letter-spacing: -0.012em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  background-color: #05080e;
+  overflow-x: hidden;
 }
 
-/* Glassmorphism Classes */
-.glass-panel {
-  background: rgba(15, 23, 42, 0.75);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
+/* Headings & Display Elements */
+.font-display, 
+h1, h2, h3, h4, 
+.hero-title, 
+[class*="font-display"] {
+  font-family: var(--font-display) !important;
+  letter-spacing: -0.035em !important;
+  font-feature-settings: "ss01" on, "cv01" on;
+}
+
+/* Technical Monospace & Badges */
+.font-mono, 
+[class*="font-mono"] {
+  font-family: var(--font-mono) !important;
+  letter-spacing: 0.04em !important;
+}
+
+p, span, li, a, button {
+  font-family: var(--font-sans);
+}
+
+/* 3. INFINITE MARQUEE TICKERS */
+.marquee-container {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  user-select: none;
+  mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+}
+
+.marquee-track {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  gap: 2rem;
+  white-space: nowrap;
+  animation: marquee-scroll-left 40s linear infinite;
+  will-change: transform;
+}
+
+.marquee-track-reverse {
+  animation: marquee-scroll-right 45s linear infinite;
+}
+
+.marquee-container:hover .marquee-track {
+  animation-play-state: paused;
+}
+
+@keyframes marquee-scroll-left {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes marquee-scroll-right {
+  0% { transform: translateX(-50%); }
+  100% { transform: translateX(0); }
+}
+
+/* Portfolio Slides Marquee Specific Cards */
+.marquee-slide-card {
+  flex-shrink: 0;
+  width: 320px;
+  height: 220px;
+  background: rgba(21, 25, 30, 0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+  transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1), 
+              border-color 0.35s ease, 
+              box-shadow 0.35s ease;
+  transform-style: preserve-3d;
 }
 
-/* Custom Scrollbar */
+.marquee-slide-card:hover {
+  transform: translateY(-8px) scale(1.03);
+  border-color: rgba(99, 102, 241, 0.7);
+  box-shadow: 0 16px 32px -8px rgba(99, 102, 241, 0.35),
+              0 0 20px 0 rgba(6, 182, 212, 0.2);
+}
+
+.marquee-slide-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.marquee-slide-card:hover img {
+  transform: scale(1.08);
+}
+
+.marquee-slide-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(5, 8, 14, 0.95) 0%, rgba(5, 8, 14, 0.4) 50%, rgba(5, 8, 14, 0.1) 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1rem;
+}
+
+/* 4. COOL 3D ANIMATION SYSTEM */
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+.perspective-1500 {
+  perspective: 1500px;
+}
+
+.preserve-3d {
+  transform-style: preserve-3d;
+}
+
+/* 3D Interactive Tilt Cards */
+.tilt-3d {
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.15s ease-out, box-shadow 0.25s ease-out, border-color 0.25s ease-out;
+  will-change: transform;
+}
+
+.tilt-3d-glare {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  background: radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.15) 0%, transparent 60%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  mix-blend-mode: overlay;
+  z-index: 10;
+}
+
+.tilt-3d:hover .tilt-3d-glare {
+  opacity: 1;
+}
+
+/* Floating 3D Elements */
+@keyframes float-3d-slow {
+  0%, 100% {
+    transform: translateY(0px) rotateX(0deg) rotateY(0deg);
+  }
+  33% {
+    transform: translateY(-14px) rotateX(4deg) rotateY(-4deg);
+  }
+  66% {
+    transform: translateY(8px) rotateX(-3deg) rotateY(3deg);
+  }
+}
+
+@keyframes float-3d-reverse {
+  0%, 100% {
+    transform: translateY(0px) rotateX(0deg) rotateY(0deg);
+  }
+  33% {
+    transform: translateY(12px) rotateX(-4deg) rotateY(4deg);
+  }
+  66% {
+    transform: translateY(-10px) rotateX(3deg) rotateY(-3deg);
+  }
+}
+
+.animate-float-3d {
+  animation: float-3d-slow 8s ease-in-out infinite;
+}
+
+.animate-float-3d-reverse {
+  animation: float-3d-reverse 9s ease-in-out infinite;
+}
+
+/* 3D Glowing Gradient Badges */
+.glow-badge-3d {
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.15), rgba(6, 182, 212, 0.1));
+  border: 1px solid rgba(99, 102, 241, 0.3);
+  box-shadow: 0 0 15px rgba(99, 102, 241, 0.2), inset 0 0 15px rgba(6, 182, 212, 0.1);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glow-badge-3d:hover {
+  transform: translateY(-2px) scale(1.02);
+  border-color: rgba(99, 102, 241, 0.8);
+  box-shadow: 0 0 25px rgba(99, 102, 241, 0.5), inset 0 0 20px rgba(6, 182, 212, 0.2);
+}
+
+/* 3D Hero Canvas */
+#hero-3d-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.85;
+}
+
+/* 5. SMOOTH SCROLLBAR & ENHANCEMENTS */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 7px;
 }
 ::-webkit-scrollbar-track {
-  background: #020617;
+  background: #05080e;
 }
 ::-webkit-scrollbar-thumb {
-  background: #334155;
+  background: #1e293b;
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
   background: #6366f1;
 }
 
-/* Animations */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: scale(0.96);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-
-.animate-fade-in {
-  animation: fadeIn 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-}
-
-/* Canvas drawing styles */
-#digitalCanvas {
-  touch-action: none;
+/* Glassmorphism helpers */
+.glass-panel {
+  background: rgba(15, 23, 42, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
 }
