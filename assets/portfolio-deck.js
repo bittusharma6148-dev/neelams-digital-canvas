@@ -571,10 +571,168 @@
   function enhanceAbout() {
     var aboutSec = document.getElementById("about");
     if (!aboutSec) return;
-    var firstP = aboutSec.querySelector(".space-y-5 p:first-child");
-    if (firstP && !firstP.getAttribute("data-updated")) {
-      firstP.setAttribute("data-updated", "true");
-      firstP.innerText = "Greetings ladies & gentlemen. I am Neelam — a creative and motivated Graphic Designer, Website Developer, Video Editor, and AI Agent builder. Known for my creative flair and ability to deliver visually powerful, result-driven designs, I transform ideas into engaging brands, websites, and digital campaigns that make a lasting impact.";
+    if (aboutSec.getAttribute("data-luxury-about") === "v1") return;
+
+    aboutSec.className = "about-luxury-container relative px-5 py-24 md:px-12 md:py-36 text-foreground overflow-hidden";
+    
+    var html = '<div class="about-spotlight"></div>' +
+      '<div class="absolute inset-0 bg-[radial-gradient(ellipse_at_80%_20%,rgba(56,189,248,0.06),transparent_60%)] pointer-events-none"></div>' +
+      '<div class="absolute right-4 top-1/2 -translate-y-1/2 h-[90%] flex items-center justify-center pointer-events-none z-0 hidden lg:flex">' +
+        '<span class="about-watermark-vertical">NEELAM</span>' +
+      '</div>' +
+      '<div class="relative z-10 mx-auto max-w-[1600px]">' +
+        '<!-- Top Header Bar -->' +
+        '<div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-12 pb-6 border-b border-white/10">' +
+          '<div class="flex items-center gap-3">' +
+            '<span class="font-mono text-xs text-primary font-semibold tracking-widest">01 / ABOUT</span>' +
+            '<span class="h-px w-16 bg-primary/60"></span>' +
+          '</div>' +
+          '<div class="font-mono text-[10px] text-muted-foreground/70 tracking-[0.25em] uppercase hidden sm:block">' +
+            'PEOPLE • IDEAS • BRANDS • BETTER TOGETHER.' +
+          '</div>' +
+        '</div>' +
+        '<!-- Main Content Grid -->' +
+        '<div class="grid grid-cols-12 gap-8 lg:gap-12 items-center">' +
+          '<!-- LEFT COLUMN: Floating Badges + Portrait + Signature -->' +
+          '<div class="col-span-12 lg:col-span-6 relative flex flex-col md:flex-row items-center md:items-end justify-center gap-6">' +
+            '<!-- 4 Floating Glassmorphic Badges Stack -->' +
+            '<div class="relative flex flex-col gap-4 z-20 w-full md:w-auto shrink-0 pl-4">' +
+              '<div class="about-vertical-line hidden md:block">' +
+                '<div class="about-vertical-dot"></div>' +
+              '</div>' +
+              '<div class="about-glass-badge animate-float-b1 tilt-3d">' +
+                '<div class="about-badge-icon">' +
+                  '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 19 7-7 3 3-7 7-3-3z"/><path d="m18 13-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><path d="m2 2 7.586 7.586"/><circle cx="11" cy="11" r="2"/></svg>' +
+                '</div>' +
+                '<div>' +
+                  '<div class="font-mono text-[11px] font-bold text-white tracking-wider">GRAPHIC</div>' +
+                  '<div class="font-mono text-[10px] text-muted-foreground">DESIGNER</div>' +
+                '</div>' +
+              '</div>' +
+              '<div class="about-glass-badge animate-float-b2 tilt-3d">' +
+                '<div class="about-badge-icon">' +
+                  '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>' +
+                '</div>' +
+                '<div>' +
+                  '<div class="font-mono text-[11px] font-bold text-white tracking-wider">WEBSITE</div>' +
+                  '<div class="font-mono text-[10px] text-muted-foreground">DEVELOPER</div>' +
+                '</div>' +
+              '</div>' +
+              '<div class="about-glass-badge animate-float-b3 tilt-3d">' +
+                '<div class="about-badge-icon">' +
+                  '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg>' +
+                '</div>' +
+                '<div>' +
+                  '<div class="font-mono text-[11px] font-bold text-white tracking-wider">VIDEO</div>' +
+                  '<div class="font-mono text-[10px] text-muted-foreground">EDITOR</div>' +
+                '</div>' +
+              '</div>' +
+              '<div class="about-glass-badge animate-float-b4 tilt-3d">' +
+                '<div class="about-badge-icon">' +
+                  '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a8 8 0 0 0-8 8c0 3.3 2 6.2 5 7.4V20a2 2 0 0 0 2 2h2a2 2 0 0 0 2-2v-2.6c3-1.2 5-4.1 5-7.4a8 8 0 0 0-8-8z"/><path d="M9 10h.01"/><path d="M15 10h.01"/></svg>' +
+                '</div>' +
+                '<div>' +
+                  '<div class="font-mono text-[11px] font-bold text-white tracking-wider">AI AGENT</div>' +
+                  '<div class="font-mono text-[10px] text-muted-foreground">BUILDER</div>' +
+                '</div>' +
+              '</div>' +
+              '<div class="pt-4 flex flex-col items-start pl-2">' +
+                '<span class="about-signature">Neelam</span>' +
+                '<span class="font-mono text-[9px] tracking-[0.25em] text-white/50 uppercase mt-0.5">CREATE • DEVELOP • INSPIRE</span>' +
+              '</div>' +
+            '</div>' +
+            '<!-- Center Portrait Photo -->' +
+            '<div class="relative z-10 max-w-[380px] md:max-w-[420px] w-full flex items-end justify-center">' +
+              '<div class="relative w-full">' +
+                '<img src="/__l5e/assets-v1/301438ad-b870-4701-be25-d62becda1453/neelam-designer.png" alt="Neelam Designer" class="w-full h-auto object-contain object-bottom drop-shadow-[0_20px_35px_rgba(0,0,0,0.85)] filter contrast-105" loading="lazy" />' +
+                '<div class="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-[#070b12] to-transparent pointer-events-none"></div>' +
+              '</div>' +
+            '</div>' +
+          '</div>' +
+          '<!-- RIGHT COLUMN: Headlines + Narrative + Values + CTA -->' +
+          '<div class="col-span-12 lg:col-span-6 flex flex-col justify-center lg:pl-6">' +
+            '<div class="flex items-center gap-3 mb-4">' +
+              '<span class="h-px w-8 bg-white/20"></span>' +
+              '<span class="font-mono text-[11px] uppercase tracking-[0.3em] text-white/70">A B O U T &nbsp; M E</span>' +
+              '<span class="h-px w-12 bg-white/20"></span>' +
+            '</div>' +
+            '<h2 class="font-display text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-[1] tracking-tight">' +
+              '<span class="block text-white">BEHIND THE</span>' +
+              '<span class="block text-[#00d2ff] drop-shadow-[0_0_25px_rgba(0,210,255,0.4)]">CREATIVE WORK.</span>' +
+            '</h2>' +
+            '<div class="mt-8 space-y-4 text-sm sm:text-base leading-relaxed text-muted-foreground font-sans">' +
+              '<p class="text-white/80">' +
+                'Greetings ladies &amp; gentlemen. I am Neelam — a creative and motivated <span class="text-sky-400 font-semibold underline underline-offset-4 decoration-sky-500/40">Graphic Designer</span>, <span class="text-sky-400 font-semibold underline underline-offset-4 decoration-sky-500/40">Website Developer</span>, <span class="text-sky-400 font-semibold underline underline-offset-4 decoration-sky-500/40">Video Editor</span>, and <span class="text-sky-400 font-semibold underline underline-offset-4 decoration-sky-500/40">AI Agent builder</span>. Known for my creative flair and ability to deliver visually powerful, result-driven designs, I transform ideas into engaging brands, websites, and digital campaigns that make a lasting impact.' +
+              '</p>' +
+              '<p>' +
+                'I combine creativity, technology and marketing to create digital experiences that don\'t just look good — they help businesses grow.' +
+              '</p>' +
+              '<p>' +
+                'Today, I am also exploring and building AI agents and automation systems to help businesses work smarter.' +
+              '</p>' +
+            '</div>' +
+            '<div class="mt-10 pt-8 border-t border-white/10 grid grid-cols-2 sm:grid-cols-4 gap-6">' +
+              '<div class="about-value-node">' +
+                '<div class="about-value-circle">' +
+                  '<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"/><path d="M9 18h6"/><path d="M10 22h4"/></svg>' +
+                '</div>' +
+                '<div>' +
+                  '<div class="font-mono text-xs font-bold text-white tracking-wider">CREATIVE</div>' +
+                  '<div class="font-mono text-[10px] text-muted-foreground">IDEAS</div>' +
+                '</div>' +
+              '</div>' +
+              '<div class="about-value-node">' +
+                '<div class="about-value-circle">' +
+                  '<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"/><circle cx="12" cy="12" r="3"/></svg>' +
+                '</div>' +
+                '<div>' +
+                  '<div class="font-mono text-xs font-bold text-white tracking-wider">SMART</div>' +
+                  '<div class="font-mono text-[10px] text-muted-foreground">SOLUTIONS</div>' +
+                '</div>' +
+              '</div>' +
+              '<div class="about-value-node">' +
+                '<div class="about-value-circle">' +
+                  '<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/></svg>' +
+                '</div>' +
+                '<div>' +
+                  '<div class="font-mono text-xs font-bold text-white tracking-wider">REAL</div>' +
+                  '<div class="font-mono text-[10px] text-muted-foreground">RESULTS</div>' +
+                '</div>' +
+              '</div>' +
+              '<div class="about-value-node">' +
+                '<div class="about-value-circle">' +
+                  '<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>' +
+                '</div>' +
+                '<div>' +
+                  '<div class="font-mono text-xs font-bold text-white tracking-wider">LONG-TERM</div>' +
+                  '<div class="font-mono text-[10px] text-muted-foreground">IMPACT</div>' +
+                '</div>' +
+              '</div>' +
+            '</div>' +
+            '<div class="mt-10 flex flex-wrap items-center justify-between gap-6 pt-6 border-t border-white/5">' +
+              '<a href="#contact" class="about-connect-btn inline-flex items-center gap-3 px-8 py-3.5 text-black font-mono text-xs font-bold uppercase rounded-full tracking-wider cursor-pointer">' +
+                '<span>LET\'S CONNECT</span>' +
+                '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>' +
+              '</a>' +
+              '<span class="font-mono text-[10px] text-muted-foreground tracking-[0.2em] uppercase hidden sm:inline">' +
+                'IDEAS &nbsp;|&nbsp; DESIGN &nbsp;|&nbsp; DEVELOP &nbsp;|&nbsp; GROW' +
+              '</span>' +
+            '</div>' +
+            '<div class="mt-8 flex flex-col items-start border-l-2 border-sky-400 pl-4 py-1">' +
+              '<p class="font-sans text-xs italic text-muted-foreground leading-relaxed">' +
+                '&ldquo;Design is not just what it looks like, but what it does.&rdquo;' +
+              '</p>' +
+              '<span class="font-mono text-[9px] text-sky-400/80 uppercase tracking-widest mt-1">CREATIVE PHILOSOPHY</span>' +
+            '</div>' +
+          '</div>' +
+        '</div>' +
+      '</div>';
+
+    aboutSec.innerHTML = html;
+    aboutSec.setAttribute("data-luxury-about", "v1");
+
+    if (window.reInit3DAnimations) {
+      window.reInit3DAnimations();
     }
   }
 
