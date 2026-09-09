@@ -386,48 +386,168 @@
     });
   }
 
+  window.openCustomArtworkModal = function(title, imgSrc, desc, tag) {
+    createModal();
+    var modal = document.getElementById("folio-lightbox-modal");
+    var img = document.getElementById("lightbox-image");
+    var counter = document.getElementById("lightbox-counter");
+    var titleElem = document.getElementById("lightbox-title");
+    var descElem = document.getElementById("lightbox-desc");
+    var catBadge = document.getElementById("lightbox-cat");
+    var waBtn = document.getElementById("lightbox-wa-btn");
+    var zoomBtn = document.getElementById("lightbox-zoom-btn");
+
+    if (img) {
+      img.src = imgSrc;
+      img.alt = title;
+      img.style.transform = "scale(1)";
+      img.style.cursor = "zoom-in";
+    }
+    if (counter) counter.innerText = "FEATURED SHOWCASE";
+    if (titleElem) titleElem.innerText = title;
+    if (descElem) descElem.innerText = desc;
+    if (catBadge) catBadge.innerText = tag || "FEATURED";
+    if (zoomBtn) zoomBtn.innerText = "Zoom 1.6x";
+    if (waBtn) {
+      waBtn.href = "https://wa.me/917973773184?text=" + encodeURIComponent("Hi Neelam, I saw your featured work: " + title + " and would like to discuss a project.");
+    }
+    if (modal) {
+      modal.classList.remove("hidden");
+      modal.classList.add("flex");
+      document.body.style.overflow = "hidden";
+    }
+  };
+
+  var featuredWorksData = [
+    {
+      id: "branding",
+      tag: "01 // BRAND IDENTITY",
+      title: "BRAND IDENTITY & STRATEGY",
+      tagline: "Build | Design | Grow • Ideas That Make Brands Shine",
+      desc: "Complete corporate identity systems including luxury logo mark, stationery suites, color hierarchy, and brand guidelines for market leadership.",
+      img: "/assets/work/brand-identity.png",
+      deliverables: ["Brand Strategy", "Visual Identity", "Brand Story", "Growth Assets"],
+      badgeColor: "text-amber-300 border-amber-500/40 bg-amber-500/10"
+    },
+    {
+      id: "video",
+      tag: "02 // VIDEO EDITING",
+      title: "CINEMATIC VIDEO EDITING & REELS",
+      tagline: "Turn Your Ideas into Impact • Story . Style . Impact",
+      desc: "High-retention social media reels, commercial brand promos, corporate showcase films, and dynamic motion graphics engineered for maximum engagement.",
+      img: "/assets/work/video-editing.png",
+      deliverables: ["Promo Videos", "Instagram Reels", "Corporate Videos", "Motion Graphics"],
+      badgeColor: "text-orange-400 border-orange-500/40 bg-orange-500/10"
+    },
+    {
+      id: "marketing",
+      tag: "03 // DIGITAL MARKETING",
+      title: "SOCIALBOOST DIGITAL MARKETING",
+      tagline: "Grow Your Brand • Go Beyond • Strategic Growth",
+      desc: "Data-driven performance marketing combining targeted Meta ads, conversion funnels, search engine optimization, and creative social campaigns for real results.",
+      img: "/assets/work/digital-marketing.png",
+      deliverables: ["Social Media Ads", "SEO Optimization", "Paid Advertising", "Content Creation"],
+      badgeColor: "text-purple-400 border-purple-500/40 bg-purple-500/10"
+    },
+    {
+      id: "ai",
+      tag: "04 // AI AGENTS",
+      title: "INTELLIGENT AI AGENTS & AUTOMATION",
+      tagline: "Automate | Assist | Accelerate • Intelligence Beyond Limits",
+      desc: "Custom 24/7 autonomous AI agents designed to qualify leads, handle instant customer support, eliminate manual tasks, and scale operations smoothly.",
+      img: "/assets/work/ai-agents.png",
+      deliverables: ["24/7 Customer Support", "AI Sales Agents", "Lead Qualification", "Workflow Automations"],
+      badgeColor: "text-cyan-400 border-cyan-500/40 bg-cyan-500/10"
+    },
+    {
+      id: "web",
+      tag: "05 // WEBSITE DEV",
+      title: "MODERN WEB ARCHITECTURE & UI/UX",
+      tagline: "Living Better • Modern Websites for Bigger Brands",
+      desc: "Bespoke high-converting websites, luxury real estate digital experiences, portfolio platforms, and animated web apps with 100% responsive performance.",
+      img: "/assets/portfolio-pages/page-37.png",
+      deliverables: ["Modern UI/UX", "Mobile First", "3D Web Animations", "Fast & Secure"],
+      badgeColor: "text-emerald-400 border-emerald-500/40 bg-emerald-500/10"
+    }
+  ];
+
   function enhanceSelectedWork() {
-    var workArticles = document.querySelectorAll("#work article");
-    var targetSlides = [3, 10, 3, 16, 3];
-    var projectNames = [
-      "NEXORA (WEBSITE DEVELOPMENT)",
-      "LUMIÈRE (BRAND IDENTITY)",
-      "BEYOND LIMITS (VIDEO EDITING)",
-      "SOCIALBOOST (DIGITAL MARKETING)",
-      "NEURA (AI AGENTS)"
-    ];
-    var projectDescriptions = [
-      "A modern and high-performing website crafted to help brands grow online with clean design and seamless functionality.",
-      "Complete brand identity design including logo, packaging, and visual elements that reflect elegance and trust.",
-      "A cinematic video edit created to tell a powerful story and engage the audience across multiple platforms.",
-      "Data-driven digital marketing strategies to increase brand visibility, engagement, and conversions.",
-      "Custom AI agents designed to automate tasks, streamline workflows, and boost productivity for businesses."
-    ];
+    var workSection = document.getElementById("work");
+    if (!workSection) return;
+    if (workSection.getAttribute("data-showcase-enhanced") === "true") return;
 
-    workArticles.forEach(function(article, idx) {
-      if (idx < projectNames.length) {
-        var h3 = article.querySelector("h3");
-        var p = article.querySelector("p");
-        var btn = article.querySelector("button");
-        if (h3) h3.innerText = projectNames[idx];
-        if (p) p.innerText = projectDescriptions[idx];
+    var container = workSection.querySelector(".overflow-x-auto > .flex");
+    if (!container) return;
 
-        if (!article.querySelector(".work-card-bg-img")) {
-          var bgImg = document.createElement("img");
-          bgImg.className = "work-card-bg-img absolute inset-0 h-full w-full object-cover opacity-20 pointer-events-none transition-opacity duration-300";
-          bgImg.src = slides[targetSlides[idx]].img;
-          article.insertBefore(bgImg, article.firstChild);
-        }
+    var headerRow = workSection.querySelector(".reveal.mx-auto.mb-14");
+    if (headerRow && !headerRow.querySelector(".work-nav-controls")) {
+      var navControls = document.createElement("div");
+      navControls.className = "work-nav-controls flex items-center gap-3 mt-4 md:mt-0";
+      navControls.innerHTML = '<span class="font-mono text-[10px] text-muted-foreground uppercase hidden sm:inline">EXPLORE FLAGSHIP PROJECTS</span>' +
+        '<button id="work-prev-btn" class="h-10 w-10 border border-white/20 hover:border-primary hover:bg-primary/10 rounded flex items-center justify-center text-white transition-colors cursor-pointer" title="Previous Work">' +
+          '<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>' +
+        '</button>' +
+        '<button id="work-next-btn" class="h-10 w-10 border border-white/20 hover:border-primary hover:bg-primary/10 rounded flex items-center justify-center text-white transition-colors cursor-pointer" title="Next Work">' +
+          '<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>' +
+        '</button>';
+      headerRow.appendChild(navControls);
 
-        if (btn) {
-          btn.onclick = function(e) {
-            e.preventDefault();
-            e.stopPropagation();
-            openSlideModal(targetSlides[idx]);
-          };
-        }
+      var scrollElem = workSection.querySelector(".overflow-x-auto");
+      var prevBtn = headerRow.querySelector("#work-prev-btn");
+      var nextBtn = headerRow.querySelector("#work-next-btn");
+      if (prevBtn && scrollElem) {
+        prevBtn.onclick = function() {
+          scrollElem.scrollBy({ left: -640, behavior: "smooth" });
+        };
       }
+      if (nextBtn && scrollElem) {
+        nextBtn.onclick = function() {
+          scrollElem.scrollBy({ left: 640, behavior: "smooth" });
+        };
+      }
+    }
+
+    var html = "";
+    featuredWorksData.forEach(function(item, idx) {
+      var pillsHtml = item.deliverables.map(function(d) {
+        return '<span class="font-mono text-[9px] uppercase px-2 py-0.5 bg-white/5 border border-white/10 text-white/75 rounded">' + d + '</span>';
+      }).join("");
+
+      html += '<article class="featured-work-card tilt-3d relative flex flex-col w-[85vw] max-w-[660px] md:w-[620px] shrink-0 border border-white/10 bg-[#0d1118]/95 backdrop-blur-md rounded-xl overflow-hidden shadow-2xl transition-all duration-300 hover:border-primary/60 hover:shadow-primary/20">' +
+        '<!-- High-Res Artwork Banner -->' +
+        '<div class="relative aspect-[16/9] w-full overflow-hidden bg-black/60 cursor-pointer group" onclick="openCustomArtworkModal(\'' + item.title.replace(/'/g, "\\'") + '\', \'' + item.img + '\', \'' + item.desc.replace(/'/g, "\\'") + '\', \'' + item.tag + '\')">' +
+          '<img src="' + item.img + '" alt="' + item.title + '" class="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-105" loading="lazy" />' +
+          '<div class="absolute inset-0 bg-gradient-to-t from-[#0d1118] via-transparent to-transparent opacity-80 group-hover:opacity-40 transition-opacity"></div>' +
+          '<span class="absolute top-4 left-4 font-mono text-[10px] uppercase px-3 py-1 border rounded backdrop-blur-md font-semibold ' + item.badgeColor + '">' + item.tag + '</span>' +
+          '<span class="absolute bottom-3 right-3 font-mono text-[10px] text-white/90 px-3 py-1 bg-black/80 border border-white/20 rounded flex items-center gap-1.5 backdrop-blur-md opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-1 group-hover:translate-y-0">' +
+            '<span>EXPAND ARTWORK</span>' +
+            '<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg>' +
+          '</span>' +
+        '</div>' +
+        '<!-- Card Body -->' +
+        '<div class="p-6 md:p-7 flex flex-col justify-between flex-1 bg-gradient-to-b from-[#0d1118] to-[#090d13]">' +
+          '<div>' +
+            '<h3 class="font-display text-xl md:text-2xl text-white font-bold tracking-tight">' + item.title + '</h3>' +
+            '<p class="font-mono text-xs text-primary mt-1 font-medium">' + item.tagline + '</p>' +
+            '<p class="text-xs md:text-sm text-muted-foreground mt-3 leading-relaxed font-sans line-clamp-2">' + item.desc + '</p>' +
+          '</div>' +
+          '<div class="mt-6 pt-4 border-t border-white/5 flex flex-wrap items-center justify-between gap-3">' +
+            '<div class="flex flex-wrap gap-1.5">' + pillsHtml + '</div>' +
+            '<button class="inline-flex items-center gap-2 px-4 py-2 bg-primary hover:bg-white text-black font-mono text-xs uppercase font-bold transition-all rounded cursor-pointer" onclick="openCustomArtworkModal(\'' + item.title.replace(/'/g, "\\'") + '\', \'' + item.img + '\', \'' + item.desc.replace(/'/g, "\\'") + '\', \'' + item.tag + '\')">' +
+              '<span>VIEW PROJECT</span>' +
+              '<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>' +
+            '</button>' +
+          '</div>' +
+        '</div>' +
+      '</article>';
     });
+
+    container.innerHTML = html;
+    workSection.setAttribute("data-showcase-enhanced", "true");
+
+    if (window.reInit3DAnimations) {
+      window.reInit3DAnimations();
+    }
   }
 
   function enhanceNav() {
