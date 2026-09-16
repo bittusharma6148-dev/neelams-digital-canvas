@@ -1,24 +1,28 @@
 # Robust Localhost HTTP Server for Neelam's Digital Canvas
 param (
-    [int]$Port = 3000,
+    [int]$Port = 8080,
     [string]$DocRoot = $PSScriptRoot
 )
 
 $listener = New-Object System.Net.HttpListener
-$prefix = "http://localhost:" + $Port + "/"
-$listener.Prefixes.Add($prefix)
+$prefix1 = "http://localhost:" + $Port + "/"
+$prefix2 = "http://127.0.0.1:" + $Port + "/"
+$listener.Prefixes.Add($prefix1)
+try {
+    $listener.Prefixes.Add($prefix2)
+} catch {}
 
 try {
     $listener.Start()
     Write-Host "NEELAM'S DIGITAL CANVAS IS LIVE ON LOCALHOST!" -ForegroundColor Green
-    Write-Host "URL: $prefix" -ForegroundColor Yellow
+    Write-Host "URL: $prefix1" -ForegroundColor Yellow
 } catch {
     $Port = 8080
-    $prefix = "http://localhost:" + $Port + "/"
+    $prefix1 = "http://localhost:" + $Port + "/"
     $listener = New-Object System.Net.HttpListener
-    $listener.Prefixes.Add($prefix)
+    $listener.Prefixes.Add($prefix1)
     $listener.Start()
-    Write-Host "URL: $prefix" -ForegroundColor Yellow
+    Write-Host "URL: $prefix1" -ForegroundColor Yellow
 }
 
 $mimeTypes = @{
@@ -32,6 +36,11 @@ $mimeTypes = @{
     ".jpeg" = "image/jpeg"
     ".svg"  = "image/svg+xml"
     ".ico"  = "image/x-icon"
+    ".woff" = "font/woff"
+    ".woff2"= "font/woff2"
+    ".ttf"  = "font/ttf"
+    ".mp4"  = "video/mp4"
+    ".pdf"  = "application/pdf"
 }
 
 while ($listener.IsListening) {
