@@ -1,3 +1,5 @@
 *.zip
 *.bundle
+*.backup*
+lovable_raw.html
 .system_generated/
