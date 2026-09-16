@@ -2,14 +2,16 @@
    NEELAM'S DIGITAL CANVAS — PROFESSIONAL TYPOGRAPHY & 3D ANIMATION ENGINE
    ========================================================================== */
 
-/* 1. PROFESSIONAL MODERN TYPOGRAPHY IMPORTS (CLASH DISPLAY & GENERAL SANS) */
-@import url('https://api.fontshare.com/v2/css?f[]=clash-display@200,300,400,500,600,700&f[]=general-sans@200,300,400,500,600,700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+/* 1. PROFESSIONAL MODERN TYPOGRAPHY IMPORTS (SATOSHI SYSTEM) */
+@import url('https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Caveat:wght@600;700&display=swap');
 
 :root {
-  --font-display: 'Clash Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  --font-sans: 'General Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  --font-accent: 'Clash Display', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-heading: 'Satoshi', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-body: 'Satoshi', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-display: 'Satoshi', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-sans: 'Satoshi', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-accent: 'Satoshi', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   --font-mono: 'JetBrains Mono', monospace;
 
   /* Modern 3D & Accent Variables */
@@ -26,7 +28,7 @@ html {
 }
 
 body, html {
-  font-family: var(--font-sans) !important;
+  font-family: 'Satoshi', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
   font-weight: 400;
   letter-spacing: -0.01em;
   -webkit-font-smoothing: antialiased;
@@ -36,49 +38,75 @@ body, html {
   overflow-x: hidden;
 }
 
-/* Headings — Clash Display */
+/* Main Headings — Satoshi Bold / Black (700 / 900) */
 h1, h2, h3, h4, h5, h6,
 .font-display, 
 .hero-title, 
 [class*="font-display"],
 .text-outline,
-.text-outline-primary {
-  font-family: var(--font-display) !important;
-  font-weight: 700 !important;
-  letter-spacing: -0.025em !important;
+.text-outline-primary,
+.main-heading {
+  font-family: 'Satoshi', sans-serif !important;
+  font-weight: 900 !important; /* Satoshi Black */
+  letter-spacing: -0.03em !important;
 }
 
-/* Body Text — General Sans */
+/* Red Headings / Highlighted Accent Headings — Satoshi Bold / Black (700 / 900) */
+.text-primary,
+[class*="text-primary"],
+.text-outline-primary,
+.text-secondary,
+[class*="text-secondary"],
+.text-red-500,
+.text-red-600,
+.red-heading,
+h1 span,
+h2 span,
+h3 span,
+.eyebrow,
+[class*="eyebrow"],
+.accent-heading {
+  font-family: 'Satoshi', sans-serif !important;
+  font-weight: 900 !important; /* Satoshi Black / Bold */
+}
+
+/* Body Text — Satoshi Regular (400) / Medium (500) */
 p, li, input, textarea, select,
 .font-sans,
 [class*="font-sans"],
 [class*="text-foreground"],
-[class*="text-muted-foreground"] {
-  font-family: var(--font-sans) !important;
+[class*="text-muted-foreground"],
+.body-text {
+  font-family: 'Satoshi', sans-serif !important;
+  font-weight: 400 !important; /* Regular */
+  letter-spacing: -0.01em;
 }
 
-/* Accent Text — Clash Display Medium (500) */
-.font-accent,
+/* Satoshi Medium (500) for Subheadings, Navigation, Buttons, Badges, Strong text */
+strong, b,
+p strong,
+.font-medium,
 nav a,
 button,
 .btn,
 [class*="btn"],
-.eyebrow,
-[class*="eyebrow"],
 .badge,
 [class*="badge"],
 blockquote,
-.font-mono,
-[class*="font-mono"],
 .tag,
 .pill,
 .marquee-track span,
-[class*="text-primary"],
 a[href*="#contact"],
+.font-accent,
 .accent-text {
-  font-family: var(--font-accent) !important;
-  font-weight: 500 !important;
+  font-family: 'Satoshi', sans-serif !important;
+  font-weight: 500 !important; /* Medium */
   letter-spacing: 0.015em;
+}
+
+.font-mono,
+[class*="font-mono"] {
+  font-family: var(--font-mono) !important;
 }
 
 /* 3. INFINITE MARQUEE TICKERS */
