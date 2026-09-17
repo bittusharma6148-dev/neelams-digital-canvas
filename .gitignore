@@ -3,3 +3,4 @@
 *.backup*
 lovable_raw.html
 .system_generated/
+assets/*.pdf
