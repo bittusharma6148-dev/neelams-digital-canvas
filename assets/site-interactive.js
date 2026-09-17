@@ -91,7 +91,7 @@
           </div>
           
           <div class="relative aspect-video w-full bg-black">
-            <video id="nd-modal-video" class="h-full w-full object-cover" controls playsinline poster="/assets/neelam-portrait.jpg">
+            <video id="nd-modal-video" class="h-full w-full object-cover" controls playsinline poster="./assets/neelam-portrait.jpg">
               <source src="https://labs.google/fx/api/og-video/shared/6eabf7aa-acaa-417a-a021-5674fda1697b" type="video/mp4" />
             </video>
           </div>
@@ -257,7 +257,7 @@
     document.querySelectorAll('.btn-download-cv, a[download*="Portfolio"]').forEach(link => {
       if (link.__cvBound) return;
       link.__cvBound = true;
-      link.setAttribute('href', '/assets/Neelam-Designer-Portfolio-CV.pdf');
+      link.setAttribute('href', './assets/Neelam-Designer-Portfolio-CV.pdf');
       link.setAttribute('download', 'Neelam-Designer-Portfolio-CV.pdf');
     });
   }

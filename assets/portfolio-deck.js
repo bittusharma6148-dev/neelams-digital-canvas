@@ -4,47 +4,47 @@
   window.__portfolioDeckInitialized = true;
 
   var slides = [
-    { p: 1, img: "/assets/portfolio-pages/page-01.png", cat: "intro", title: "Portfolio Cover", desc: "Showcasing Ideas • Creating Opportunities • Designing Digital Experiences That Matter" },
-    { p: 2, img: "/assets/portfolio-pages/page-02.png", cat: "intro", title: "Hello, I'm Neelam", desc: "Creative Professional • 50+ Projects • 30+ Happy Clients • 3+ Years Experience" },
-    { p: 3, img: "/assets/portfolio-pages/page-03.png", cat: "intro", title: "Editorial & Smartphone Mockup", desc: "Good Design Creates a Better Tomorrow • From Ideas to Impact" },
-    { p: 4, img: "/assets/portfolio-pages/page-04.png", cat: "web", title: "Selected (Work)", desc: "Nexora, Lumière, Beyond Limits, SocialBoost, Neura" },
-    { p: 5, img: "/assets/portfolio-pages/page-05.png", cat: "branding", title: "Design Identity & Color Palette", desc: "Ink #0B0F14, Ink Soft #15191E, Ink Light #1F2634, Paper #F4F1E8" },
-    { p: 6, img: "/assets/portfolio-pages/page-06.png", cat: "intro", title: "Editorial Poster Showcase", desc: "Curated Digital Spaces — Where Ideas Meet Interface" },
-    { p: 7, img: "/assets/portfolio-pages/page-07.png", cat: "intro", title: "Portfolio Overview Collage", desc: "Multi-Disciplinary Design, Development & Marketing Portfolio" },
-    { p: 8, img: "/assets/portfolio-pages/page-08.png", cat: "about", title: "About Me — Personal Statement", desc: "Greetings ladies & gentlemen. Transforming ideas into engaging brands." },
-    { p: 9, img: "/assets/portfolio-pages/page-09.png", cat: "intro", title: "Table of Contents (7 Disciplines)", desc: "01 Logo • 02 Branding • 03 Social • 04 Packaging • 05 Print • 06 UI/UX • 07 Web" },
-    { p: 10, img: "/assets/portfolio-pages/page-10.png", cat: "logo", title: "01. Logo Folio — Ideas into Identities", desc: "Gulmohar Valley, GV Infra, Unison, Chhabra, Palm Village, Blue Hawk, KK Infra, Home 4 U, JustHR, SandBricks" },
-    { p: 11, img: "/assets/portfolio-pages/page-11.png", cat: "logo", title: "Brand Marks & Minimalist Identities", desc: "CareLife, Nexora, Altura, Oceania, Vivanté, Skyline, Serenique, Brewster, EduVista, Lumière, Terralis, PawNest" },
-    { p: 12, img: "/assets/portfolio-pages/page-12.png", cat: "branding", title: "02. Branding Design Overview", desc: "Impactful visual identifying marks communicating mission and business goals" },
-    { p: 13, img: "/assets/portfolio-pages/page-13.png", cat: "branding", title: "Ourvita Full Branding — Identity & Digital", desc: "Nature for a Healthier You — Stationery, ID card, mobile website & packaging" },
-    { p: 14, img: "/assets/portfolio-pages/page-14.png", cat: "branding", title: "Ourvita Guidelines & Color Palette", desc: "Target Audience 18-45, Color Swatches #0C5A32, Labora Font, Cosmetic Lineup" },
-    { p: 15, img: "/assets/portfolio-pages/page-15.png", cat: "branding", title: "Ourvita Wordmark Logo Breakdown", desc: "Negative space leaf shape, rounded typography, green natural symbolism" },
-    { p: 16, img: "/assets/portfolio-pages/page-16.png", cat: "social", title: "03. Social Media Design Hub", desc: "Visual content crafted for Instagram & Facebook — Engage, Connect, Grow" },
-    { p: 17, img: "/assets/portfolio-pages/page-17.png", cat: "social", title: "Creatives That Connect", desc: "Scroll-stopping social designs for Sony, Arijit Singh, HP ProBook, Visit Malaysia" },
-    { p: 18, img: "/assets/portfolio-pages/page-18.png", cat: "social", title: "Alishaanghar.com Social Media", desc: "Sivanta Square NH-64 commercial showrooms & real estate visual campaigns" },
-    { p: 19, img: "/assets/portfolio-pages/page-19.png", cat: "social", title: "Unison Furniture Palace Social Media", desc: "Simple & modern furniture visual campaigns and luxury living promotions" },
-    { p: 20, img: "/assets/portfolio-pages/page-20.png", cat: "social", title: "Krispy Kreme Social Media", desc: "We are sweet but she's the sweetest! #HappyMothersDay & Glazed Donuts" },
-    { p: 21, img: "/assets/portfolio-pages/page-21.png", cat: "social", title: "Fit Kingdom Gym Social Media", desc: "Rs. 27 per day deal, Shape Your Body & Gym Anniversary campaigns" },
-    { p: 22, img: "/assets/portfolio-pages/page-22.png", cat: "social", title: "FZ Gym Social Media", desc: "High-Tech Gym in Dhakoli, Pre-Launch 50% Off & Annual Membership" },
-    { p: 23, img: "/assets/portfolio-pages/page-23.png", cat: "social", title: "Hermitage Centralis Social Media", desc: "Spacious Apartments or Opulent Penthouses — VIP Road Zirakpur" },
-    { p: 24, img: "/assets/portfolio-pages/page-24.png", cat: "social", title: "Bella Green Social Media", desc: "Peace Makes The World A Happy Home — 1 BHK Ready to Move 17.20 Lacs" },
-    { p: 25, img: "/assets/portfolio-pages/page-25.png", cat: "social", title: "Palm Village Social Media", desc: "Togetherness at Palm Village — 3BHK Luxurious Flats in Mohali" },
-    { p: 26, img: "/assets/portfolio-pages/page-26.png", cat: "social", title: "SandBricks Realty Social Media", desc: "Your Castle for Perfect Bedtime Stories — Exotica Homez 2 BHK" },
-    { p: 27, img: "/assets/portfolio-pages/page-27.png", cat: "social", title: "Portrait Instagram Feed Design", desc: "High-engagement aesthetic layout & mobile social storytelling" },
-    { p: 28, img: "/assets/portfolio-pages/page-28.png", cat: "social", title: "The Diplomat Business Club / Danube", desc: "Business Opportunities Forum Dubai social media visual campaign" },
-    { p: 29, img: "/assets/portfolio-pages/page-29.png", cat: "packaging", title: "04. Package Design — Creative & Strategic", desc: "Herbiva Skincare Face Serum, Pure Natural Tea, Bean Theory Coffee, Blush Beauty Soap" },
-    { p: 30, img: "/assets/portfolio-pages/page-30.png", cat: "packaging", title: "FMCG & Consumer Product Packaging", desc: "Blueberry Ice Cream, Kashmiri Chilli, Gopal Banana Chips, Kissan Ketchup, Cree LED" },
-    { p: 31, img: "/assets/portfolio-pages/page-31.png", cat: "print", title: "05. Print Media Design Overview", desc: "High-quality print designs crafted to enhance offline brand presence" },
-    { p: 32, img: "/assets/portfolio-pages/page-32.png", cat: "print", title: "Livspace Interior Design Brochure", desc: "Multi-page luxury interior catalog — Living Room, Bedroom, Kitchen, Bathroom" },
-    { p: 33, img: "/assets/portfolio-pages/page-33.png", cat: "print", title: "Roll-Up Standee Designs", desc: "Rameshwar Builders, Equinoxx Academy, Alimentos Banquet, Octant Pizza" },
-    { p: 34, img: "/assets/portfolio-pages/page-34.png", cat: "print", title: "Outdoor Highway Billboard Designs", desc: "Rameshwar City Bungalow, Manglam Jewellers 25% Off, Rin Detergent" },
-    { p: 35, img: "/assets/portfolio-pages/page-35.png", cat: "web", title: "06 & 07. Website Development — Build. Design. Grow.", desc: "Custom Development, Responsive Design, Fast & Secure, SEO Optimized" },
-    { p: 36, img: "/assets/portfolio-pages/page-36.png", cat: "web", title: "Editorial Websites for Modern Brands", desc: "Creative portfolio and impactful digital experiences for creative businesses" },
-    { p: 37, img: "/assets/portfolio-pages/page-37.png", cat: "web", title: "Vero Homes Luxury Real Estate Website", desc: "Living Better. Premium Homes — Architectural showcase & responsive design" },
-    { p: 38, img: "/assets/portfolio-pages/page-38.png", cat: "web", title: "Debongo Shoes & Seven Dance School", desc: "Footwear e-commerce store (#GoWinTheWorld) & dynamic dance academy web portal" },
-    { p: 39, img: "/assets/portfolio-pages/page-39.png", cat: "web", title: "Modern Websites for Bigger Brands — Nexa", desc: "Nexa Digital Marketing Agency web system — 120+ Clients, 98% Success Rate" },
-    { p: 40, img: "/assets/portfolio-pages/page-40.png", cat: "contact", title: "(Contact) Start The Conversation", desc: "Have a project in mind? Let's turn ideas into reality — hello@neelam.design" },
-    { p: 41, img: "/assets/portfolio-pages/page-41.png", cat: "contact", title: "Thanks For Watching", desc: "neelam.work@gmail.com • +91 7973773184 • Available for Freelance & Projects" }
+    { p: 1, img: "./assets/portfolio-pages/page-01.png", cat: "intro", title: "Portfolio Cover", desc: "Showcasing Ideas • Creating Opportunities • Designing Digital Experiences That Matter" },
+    { p: 2, img: "./assets/portfolio-pages/page-02.png", cat: "intro", title: "Hello, I'm Neelam", desc: "Creative Professional • 50+ Projects • 30+ Happy Clients • 3+ Years Experience" },
+    { p: 3, img: "./assets/portfolio-pages/page-03.png", cat: "intro", title: "Editorial & Smartphone Mockup", desc: "Good Design Creates a Better Tomorrow • From Ideas to Impact" },
+    { p: 4, img: "./assets/portfolio-pages/page-04.png", cat: "web", title: "Selected (Work)", desc: "Nexora, Lumière, Beyond Limits, SocialBoost, Neura" },
+    { p: 5, img: "./assets/portfolio-pages/page-05.png", cat: "branding", title: "Design Identity & Color Palette", desc: "Ink #0B0F14, Ink Soft #15191E, Ink Light #1F2634, Paper #F4F1E8" },
+    { p: 6, img: "./assets/portfolio-pages/page-06.png", cat: "intro", title: "Editorial Poster Showcase", desc: "Curated Digital Spaces — Where Ideas Meet Interface" },
+    { p: 7, img: "./assets/portfolio-pages/page-07.png", cat: "intro", title: "Portfolio Overview Collage", desc: "Multi-Disciplinary Design, Development & Marketing Portfolio" },
+    { p: 8, img: "./assets/portfolio-pages/page-08.png", cat: "about", title: "About Me — Personal Statement", desc: "Greetings ladies & gentlemen. Transforming ideas into engaging brands." },
+    { p: 9, img: "./assets/portfolio-pages/page-09.png", cat: "intro", title: "Table of Contents (7 Disciplines)", desc: "01 Logo • 02 Branding • 03 Social • 04 Packaging • 05 Print • 06 UI/UX • 07 Web" },
+    { p: 10, img: "./assets/portfolio-pages/page-10.png", cat: "logo", title: "01. Logo Folio — Ideas into Identities", desc: "Gulmohar Valley, GV Infra, Unison, Chhabra, Palm Village, Blue Hawk, KK Infra, Home 4 U, JustHR, SandBricks" },
+    { p: 11, img: "./assets/portfolio-pages/page-11.png", cat: "logo", title: "Brand Marks & Minimalist Identities", desc: "CareLife, Nexora, Altura, Oceania, Vivanté, Skyline, Serenique, Brewster, EduVista, Lumière, Terralis, PawNest" },
+    { p: 12, img: "./assets/portfolio-pages/page-12.png", cat: "branding", title: "02. Branding Design Overview", desc: "Impactful visual identifying marks communicating mission and business goals" },
+    { p: 13, img: "./assets/portfolio-pages/page-13.png", cat: "branding", title: "Ourvita Full Branding — Identity & Digital", desc: "Nature for a Healthier You — Stationery, ID card, mobile website & packaging" },
+    { p: 14, img: "./assets/portfolio-pages/page-14.png", cat: "branding", title: "Ourvita Guidelines & Color Palette", desc: "Target Audience 18-45, Color Swatches #0C5A32, Labora Font, Cosmetic Lineup" },
+    { p: 15, img: "./assets/portfolio-pages/page-15.png", cat: "branding", title: "Ourvita Wordmark Logo Breakdown", desc: "Negative space leaf shape, rounded typography, green natural symbolism" },
+    { p: 16, img: "./assets/portfolio-pages/page-16.png", cat: "social", title: "03. Social Media Design Hub", desc: "Visual content crafted for Instagram & Facebook — Engage, Connect, Grow" },
+    { p: 17, img: "./assets/portfolio-pages/page-17.png", cat: "social", title: "Creatives That Connect", desc: "Scroll-stopping social designs for Sony, Arijit Singh, HP ProBook, Visit Malaysia" },
+    { p: 18, img: "./assets/portfolio-pages/page-18.png", cat: "social", title: "Alishaanghar.com Social Media", desc: "Sivanta Square NH-64 commercial showrooms & real estate visual campaigns" },
+    { p: 19, img: "./assets/portfolio-pages/page-19.png", cat: "social", title: "Unison Furniture Palace Social Media", desc: "Simple & modern furniture visual campaigns and luxury living promotions" },
+    { p: 20, img: "./assets/portfolio-pages/page-20.png", cat: "social", title: "Krispy Kreme Social Media", desc: "We are sweet but she's the sweetest! #HappyMothersDay & Glazed Donuts" },
+    { p: 21, img: "./assets/portfolio-pages/page-21.png", cat: "social", title: "Fit Kingdom Gym Social Media", desc: "Rs. 27 per day deal, Shape Your Body & Gym Anniversary campaigns" },
+    { p: 22, img: "./assets/portfolio-pages/page-22.png", cat: "social", title: "FZ Gym Social Media", desc: "High-Tech Gym in Dhakoli, Pre-Launch 50% Off & Annual Membership" },
+    { p: 23, img: "./assets/portfolio-pages/page-23.png", cat: "social", title: "Hermitage Centralis Social Media", desc: "Spacious Apartments or Opulent Penthouses — VIP Road Zirakpur" },
+    { p: 24, img: "./assets/portfolio-pages/page-24.png", cat: "social", title: "Bella Green Social Media", desc: "Peace Makes The World A Happy Home — 1 BHK Ready to Move 17.20 Lacs" },
+    { p: 25, img: "./assets/portfolio-pages/page-25.png", cat: "social", title: "Palm Village Social Media", desc: "Togetherness at Palm Village — 3BHK Luxurious Flats in Mohali" },
+    { p: 26, img: "./assets/portfolio-pages/page-26.png", cat: "social", title: "SandBricks Realty Social Media", desc: "Your Castle for Perfect Bedtime Stories — Exotica Homez 2 BHK" },
+    { p: 27, img: "./assets/portfolio-pages/page-27.png", cat: "social", title: "Portrait Instagram Feed Design", desc: "High-engagement aesthetic layout & mobile social storytelling" },
+    { p: 28, img: "./assets/portfolio-pages/page-28.png", cat: "social", title: "The Diplomat Business Club / Danube", desc: "Business Opportunities Forum Dubai social media visual campaign" },
+    { p: 29, img: "./assets/portfolio-pages/page-29.png", cat: "packaging", title: "04. Package Design — Creative & Strategic", desc: "Herbiva Skincare Face Serum, Pure Natural Tea, Bean Theory Coffee, Blush Beauty Soap" },
+    { p: 30, img: "./assets/portfolio-pages/page-30.png", cat: "packaging", title: "FMCG & Consumer Product Packaging", desc: "Blueberry Ice Cream, Kashmiri Chilli, Gopal Banana Chips, Kissan Ketchup, Cree LED" },
+    { p: 31, img: "./assets/portfolio-pages/page-31.png", cat: "print", title: "05. Print Media Design Overview", desc: "High-quality print designs crafted to enhance offline brand presence" },
+    { p: 32, img: "./assets/portfolio-pages/page-32.png", cat: "print", title: "Livspace Interior Design Brochure", desc: "Multi-page luxury interior catalog — Living Room, Bedroom, Kitchen, Bathroom" },
+    { p: 33, img: "./assets/portfolio-pages/page-33.png", cat: "print", title: "Roll-Up Standee Designs", desc: "Rameshwar Builders, Equinoxx Academy, Alimentos Banquet, Octant Pizza" },
+    { p: 34, img: "./assets/portfolio-pages/page-34.png", cat: "print", title: "Outdoor Highway Billboard Designs", desc: "Rameshwar City Bungalow, Manglam Jewellers 25% Off, Rin Detergent" },
+    { p: 35, img: "./assets/portfolio-pages/page-35.png", cat: "web", title: "06 & 07. Website Development — Build. Design. Grow.", desc: "Custom Development, Responsive Design, Fast & Secure, SEO Optimized" },
+    { p: 36, img: "./assets/portfolio-pages/page-36.png", cat: "web", title: "Editorial Websites for Modern Brands", desc: "Creative portfolio and impactful digital experiences for creative businesses" },
+    { p: 37, img: "./assets/portfolio-pages/page-37.png", cat: "web", title: "Vero Homes Luxury Real Estate Website", desc: "Living Better. Premium Homes — Architectural showcase & responsive design" },
+    { p: 38, img: "./assets/portfolio-pages/page-38.png", cat: "web", title: "Debongo Shoes & Seven Dance School", desc: "Footwear e-commerce store (#GoWinTheWorld) & dynamic dance academy web portal" },
+    { p: 39, img: "./assets/portfolio-pages/page-39.png", cat: "web", title: "Modern Websites for Bigger Brands — Nexa", desc: "Nexa Digital Marketing Agency web system — 120+ Clients, 98% Success Rate" },
+    { p: 40, img: "./assets/portfolio-pages/page-40.png", cat: "contact", title: "(Contact) Start The Conversation", desc: "Have a project in mind? Let's turn ideas into reality — hello@neelam.design" },
+    { p: 41, img: "./assets/portfolio-pages/page-41.png", cat: "contact", title: "Thanks For Watching", desc: "neelam.work@gmail.com • +91 7973773184 • Available for Freelance & Projects" }
   ];
 
   var currentSlideIdx = 0;
@@ -159,7 +159,7 @@
         '</div>' +
         '<div class="flex items-center gap-2">' +
           '<button id="lightbox-zoom-btn" class="px-3 py-1.5 font-mono text-xs border border-white/20 bg-white/5 text-white hover:bg-white/15 transition-colors">Zoom 1.6x</button>' +
-          '<a href="/__l5e/assets-v1/88521fd6-0595-4ed1-9463-762c7f493264/neelam-portfolio.pdf" download="Neelam-Designer-Portfolio-41Pages.pdf" class="px-3 py-1.5 font-mono text-xs border border-primary/40 bg-primary/10 text-primary hover:bg-primary hover:text-black transition-colors hidden sm:inline-flex items-center gap-1.5">PDF (41 Pages)</a>' +
+          '<a href="./__l5e/assets-v1/88521fd6-0595-4ed1-9463-762c7f493264/neelam-portfolio.pdf" download="Neelam-Designer-Portfolio-41Pages.pdf" class="px-3 py-1.5 font-mono text-xs border border-primary/40 bg-primary/10 text-primary hover:bg-primary hover:text-black transition-colors hidden sm:inline-flex items-center gap-1.5">PDF (41 Pages)</a>' +
           '<button id="lightbox-close-btn" class="w-9 h-9 flex items-center justify-center text-white/70 hover:text-white border border-white/20 bg-white/5 hover:bg-white/20 text-lg transition-colors" title="Close (Esc)">✕</button>' +
         '</div>' +
       '</div>' +
@@ -221,7 +221,7 @@
         '<div class="flex flex-col items-start md:items-end gap-2">' +
           '<p class="font-mono text-[10px] text-muted-foreground">NEELAM DESIGNER • 2026 EDITION</p>' +
           '<div class="flex flex-wrap gap-2">' +
-            '<a href="/__l5e/assets-v1/88521fd6-0595-4ed1-9463-762c7f493264/neelam-portfolio.pdf" download="Neelam-Designer-Portfolio-41Pages.pdf" class="inline-flex items-center gap-2 px-4 py-2 border border-primary text-primary hover:bg-primary hover:text-black font-mono text-xs transition-colors">' +
+            '<a href="./__l5e/assets-v1/88521fd6-0595-4ed1-9463-762c7f493264/neelam-portfolio.pdf" download="Neelam-Designer-Portfolio-41Pages.pdf" class="inline-flex items-center gap-2 px-4 py-2 border border-primary text-primary hover:bg-primary hover:text-black font-mono text-xs transition-colors">' +
               '<span>DOWNLOAD PDF (41 PAGES)</span>' +
               '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 15V3"></path><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><path d="m7 10 5 5 5-5"></path></svg>' +
             '</a>' +
@@ -330,11 +330,11 @@
           '<p class="text-sm text-muted-foreground mt-3 leading-relaxed font-sans">Save the complete 41-page high-resolution presentation including all 23 logos, full Ourvita brand guidelines, social media case studies, packaging dielines, print collateral, and website design blueprints.</p>' +
         '</div>' +
         '<div class="flex flex-wrap gap-4">' +
-          '<a href="/__l5e/assets-v1/88521fd6-0595-4ed1-9463-762c7f493264/neelam-portfolio.pdf" target="_blank" rel="noreferrer" class="px-6 py-3 bg-white text-black font-mono text-xs uppercase font-medium hover:bg-primary transition-colors flex items-center gap-2">' +
+          '<a href="./__l5e/assets-v1/88521fd6-0595-4ed1-9463-762c7f493264/neelam-portfolio.pdf" target="_blank" rel="noreferrer" class="px-6 py-3 bg-white text-black font-mono text-xs uppercase font-medium hover:bg-primary transition-colors flex items-center gap-2">' +
             '<span>OPEN FULL PDF</span>' +
             '<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg>' +
           '</a>' +
-          '<a href="/__l5e/assets-v1/88521fd6-0595-4ed1-9463-762c7f493264/neelam-portfolio.pdf" download="Neelam-Designer-Portfolio-41Pages.pdf" class="px-6 py-3 border border-white/30 text-white hover:border-primary hover:text-primary font-mono text-xs uppercase transition-colors flex items-center gap-2">' +
+          '<a href="./__l5e/assets-v1/88521fd6-0595-4ed1-9463-762c7f493264/neelam-portfolio.pdf" download="Neelam-Designer-Portfolio-41Pages.pdf" class="px-6 py-3 border border-white/30 text-white hover:border-primary hover:text-primary font-mono text-xs uppercase transition-colors flex items-center gap-2">' +
             '<span>DOWNLOAD FILE</span>' +
             '<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 15V3"></path><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><path d="m7 10 5 5 5-5"></path></svg>' +
           '</a>' +
@@ -425,7 +425,7 @@
       title: "MODERN WEB ARCHITECTURE & UI/UX",
       tagline: "Ideas | Design | Develop | Grow • Scalable Websites | Intuitive Experiences",
       desc: "Clean architecture, creative UI/UX, fully responsive design, and high-performance modern web platforms & web apps engineered from vision to digital reality.",
-      img: "/assets/work/web-architecture.png",
+      img: "./assets/work/web-architecture.png",
       deliverables: ["Clean Architecture", "Creative UI/UX", "Responsive Design", "High Performance", "Secure & Scalable"],
       badgeColor: "text-cyan-400 border-cyan-500/40 bg-cyan-500/10"
     },
@@ -435,7 +435,7 @@
       title: "BRAND IDENTITY & STRATEGY",
       tagline: "Build | Design | Grow • Ideas That Make Brands Shine",
       desc: "Complete corporate identity systems including luxury logo mark, stationery suites, color hierarchy, and brand guidelines for market leadership.",
-      img: "/assets/work/brand-identity.png",
+      img: "./assets/work/brand-identity.png",
       deliverables: ["Brand Strategy", "Visual Identity", "Brand Story", "Growth Assets"],
       badgeColor: "text-amber-300 border-amber-500/40 bg-amber-500/10"
     },
@@ -445,7 +445,7 @@
       title: "CINEMATIC VIDEO EDITING & REELS",
       tagline: "Turn Your Ideas into Impact • Story . Style . Impact",
       desc: "High-retention social media reels, commercial brand promos, corporate showcase films, and dynamic motion graphics engineered for maximum engagement.",
-      img: "/assets/work/video-editing.png",
+      img: "./assets/work/video-editing.png",
       deliverables: ["Promo Videos", "Instagram Reels", "Corporate Videos", "Motion Graphics"],
       badgeColor: "text-orange-400 border-orange-500/40 bg-orange-500/10"
     },
@@ -455,7 +455,7 @@
       title: "SOCIALBOOST DIGITAL MARKETING",
       tagline: "Grow Your Brand • Go Beyond • Strategic Growth",
       desc: "Data-driven performance marketing combining targeted Meta ads, conversion funnels, search engine optimization, and creative social campaigns for real results.",
-      img: "/assets/work/digital-marketing.png",
+      img: "./assets/work/digital-marketing.png",
       deliverables: ["Social Media Ads", "SEO Optimization", "Paid Advertising", "Content Creation"],
       badgeColor: "text-purple-400 border-purple-500/40 bg-purple-500/10"
     },
@@ -465,7 +465,7 @@
       title: "INTELLIGENT AI AGENTS & AUTOMATION",
       tagline: "Automate | Assist | Accelerate • Intelligence Beyond Limits",
       desc: "Custom 24/7 autonomous AI agents designed to qualify leads, handle instant customer support, eliminate manual tasks, and scale operations smoothly.",
-      img: "/assets/work/ai-agents.png",
+      img: "./assets/work/ai-agents.png",
       deliverables: ["24/7 Customer Support", "AI Sales Agents", "Lead Qualification", "Workflow Automations"],
       badgeColor: "text-emerald-400 border-emerald-500/40 bg-emerald-500/10"
     }
@@ -569,68 +569,8 @@
   }
 
   function enhanceAbout() {
-    var aboutSec = document.getElementById("about");
-    if (!aboutSec) return;
-    if (aboutSec.getAttribute("data-luxury-about") === "v2") return;
-
-    aboutSec.className = "about-cinematic-section";
-    
-    var html = '<div class="about-ambient-spotlight"></div>' +
-      '<div class="about-cinematic-container">' +
-        '<!-- Top Section Header -->' +
-        '<div class="about-top-bar">' +
-          '<div class="flex items-center gap-3">' +
-            '<span class="about-tag-badge">01 / ABOUT ME</span>' +
-            '<span class="about-tag-line"></span>' +
-            '<span class="font-mono text-xs text-white/70 uppercase tracking-widest hidden sm:inline">BEHIND THE CREATIVE WORK</span>' +
-          '</div>' +
-          '<div class="flex items-center gap-3">' +
-            '<a href="/__l5e/assets-v1/88521fd6-0595-4ed1-9463-762c7f493264/neelam-portfolio.pdf" download="Neelam-Designer-Portfolio-41Pages.pdf" class="inline-flex items-center gap-2 px-3.5 py-1.5 border border-sky-400/40 bg-sky-500/10 text-sky-400 hover:bg-sky-400 hover:text-black font-mono text-[11px] transition-colors">' +
-              '<span>DOWNLOAD RESUME / PDF</span>' +
-            '</a>' +
-            '<a href="https://wa.me/917973773184?text=Hi%20Neelam,%20I%20reviewed%20your%20About%20showcase%20and%20would%20like%20to%20collaborate" target="_blank" rel="noreferrer" class="inline-flex items-center gap-2 px-3.5 py-1.5 bg-emerald-600 hover:bg-emerald-500 text-white font-mono text-[11px] transition-colors">' +
-              '<span>WHATSAPP DIRECT</span>' +
-            '</a>' +
-          '</div>' +
-        '</div>' +
-        '<!-- Master 3D Cinematic Showcase Card (Reference Design) -->' +
-        '<div class="about-showcase-card-3d tilt-3d" id="about-3d-card">' +
-          '<div class="about-image-canvas">' +
-            '<img src="/assets/about/about-studio-showcase-2k.jpg" alt="Neelam Designer — Behind The Creative Work" class="about-reference-image" loading="lazy" />' +
-            '<!-- Dynamic specular glare -->' +
-            '<div class="tilt-3d-glare"></div>' +
-            '<!-- Hotspots Overlay -->' +
-            '<div class="about-hotspots-layer">' +
-              '<a href="#contact" class="hotspot-connect" title="Let\'s Connect → Send Project Inquiry"></a>' +
-              '<a href="#portfolio-deck" onclick="if(window.filterDeckCategory)window.filterDeckCategory(\'logo\')" class="hotspot-badge hotspot-badge-graphic" title="Graphic Design Portfolio"></a>' +
-              '<a href="#portfolio-deck" onclick="if(window.filterDeckCategory)window.filterDeckCategory(\'web\')" class="hotspot-badge hotspot-badge-web" title="Website & UI/UX Development"></a>' +
-              '<a href="#portfolio-deck" onclick="if(window.filterDeckCategory)window.filterDeckCategory(\'social\')" class="hotspot-badge hotspot-badge-video" title="Video Editing & Reels"></a>' +
-              '<a href="#ai-agents" class="hotspot-badge hotspot-badge-ai" title="AI Agents & Automation"></a>' +
-              '<div class="hotspot-value-node hotspot-val-1" title="Creative Ideas"></div>' +
-              '<div class="hotspot-value-node hotspot-val-2" title="Smart Solutions"></div>' +
-              '<div class="hotspot-value-node hotspot-val-3" title="Real Results"></div>' +
-              '<div class="hotspot-value-node hotspot-val-4" title="Long-Term Impact"></div>' +
-            '</div>' +
-          '</div>' +
-        '</div>' +
-        '<!-- Bottom Quick-Access Bar -->' +
-        '<div class="about-action-bar">' +
-          '<div class="flex items-center gap-3">' +
-            '<span class="font-mono text-xs text-sky-400 font-semibold tracking-wider">CREATIVE PHILOSOPHY:</span>' +
-            '<span class="text-xs text-white/70 italic">&ldquo;Design is not just what it looks like, but what it does.&rdquo;</span>' +
-          '</div>' +
-          '<div class="flex items-center gap-3 font-mono text-[11px] text-white/60 tracking-widest uppercase">' +
-            '<span>IDEAS</span> &bull; <span>DESIGN</span> &bull; <span>DEVELOP</span> &bull; <span>GROW</span>' +
-          '</div>' +
-        '</div>' +
-      '</div>';
-
-    aboutSec.innerHTML = html;
-    aboutSec.setAttribute("data-luxury-about", "v2");
-
-    if (window.reInit3DAnimations) {
-      window.reInit3DAnimations();
-    }
+    // Preserve authentic master About section in index.html with Neelam's photo, cursive badges, stats dock & modal
+    return;
   }
 
   function enhanceContact() {
