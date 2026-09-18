@@ -48,6 +48,12 @@ while ($listener.IsListening) {
 
         $rawPath = [System.Uri]::UnescapeDataString($request.Url.LocalPath)
         $path = $rawPath.TrimStart("/").TrimStart("\")
+        if ($path.StartsWith("neelams-digital-canvas/")) {
+            $path = $path.Substring("neelams-digital-canvas/".Length)
+        }
+        if ($path -eq "neelams-digital-canvas") {
+            $path = "index.html"
+        }
         if ([string]::IsNullOrWhiteSpace($path)) {
             $path = "index.html"
         }
